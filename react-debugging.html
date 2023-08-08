@@ -64,14 +64,22 @@
         }
         // No need to change anything ABOVE this line ^
 
-        return (
+        return (                                                                              
+        // PROBLEM 1: div tag element serves as a parent function for lines 70-91
+        // PROBLEM 2: inserted drawCard function into JSX so it will deal card when button is clicked.
+        // PROBLEM 3: line 77 'onclick' needed to be camelcased to 'onClick' to run properly
+
+        <div>                        
           <h1>Draw a Card</h1>
-          <button onClick={}>
-            Click to Draw a Card
+                                       
+          <button onClick={drawCard}>    
+            Click to Draw a Card     
           </button>
-          <button onclick={shuffle}>
+    
+          <button onClick={shuffle}>
             Return Cards and Shuffle Deck
           </button>
+        
           <div style={handStyles}>
             {hand.map((card, index) => {
               return (
@@ -81,6 +89,7 @@
               )
             })}
           </div>
+        </div>
         )
       }
 
